@@ -1,0 +1,6 @@
+D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.Tests.dll
+D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.Tests.pdb
+D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.csprojResolveAssemblyReference.cache
+D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.dll
+D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.pdb

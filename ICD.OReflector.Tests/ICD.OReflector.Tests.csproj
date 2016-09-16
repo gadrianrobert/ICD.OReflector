@@ -77,13 +77,20 @@
     <Compile Include="Models\Abstract\AbstractModel.cs" />
     <Compile Include="NinjectConfigurator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestProperties.cs" />
+    <Compile Include="TestConstructors.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
+    <Folder Include="CoreLibraries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICD.OReflector\ICD.OReflector.csproj">
+      <Project>{ffc52fa2-deae-4db5-b70a-243cf694962c}</Project>
+      <Name>ICD.OReflector</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
@@ -105,6 +112,10 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

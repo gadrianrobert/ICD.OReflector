@@ -11,11 +11,11 @@ namespace ICD.OReflector.Implementation
     {
         private ConcurrentDictionary<Type, IEnumerable<ConstructorInfo>> _publicConstructorsDictionary = new ConcurrentDictionary<Type, IEnumerable<ConstructorInfo>>();
 
-        public override IEnumerable<ConstructorInfo> GetPublicConstructors(Type type)
+        public override IEnumerable<ConstructorInfo> GetConstructors(Type type)
         {
-            if (type == null) return base.GetPublicConstructors(null);
+            if (type == null) return base.GetConstructors(null);
 
-            return _publicConstructorsDictionary.GetOrAdd(type, base.GetPublicConstructors(type));
+            return _publicConstructorsDictionary.GetOrAdd(type, base.GetConstructors(type));
         }
     }
 }

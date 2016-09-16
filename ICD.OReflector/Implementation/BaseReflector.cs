@@ -8,10 +8,10 @@ namespace ICD.OReflector.Implementation
 {
     public class BaseReflector : IReflector
     {
-        public virtual IEnumerable<ConstructorInfo> GetPublicConstructors(Type type)
+        public virtual IEnumerable<ConstructorInfo> GetConstructors(Type type)
         {
             return type == null ? Enumerable.Empty<ConstructorInfo>()
-                                : type.GetTypeInfo().GetConstructors(BindingFlags.Public) ?? Enumerable.Empty<ConstructorInfo>();
+                                : type.GetTypeInfo().GetConstructors() ?? Enumerable.Empty<ConstructorInfo>();
         }
     }
 }

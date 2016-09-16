@@ -11,15 +11,15 @@ namespace ICD.OReflector.Tests
     public class TestConstructors
     {
         [Test]
-        public void TestPublicProperties()
+        public void TestGetConstructors()
         {
             //Arange
             var model = NinjectConfigurator.Get<IModel>();
-         //   var reflector = NinjectConfigurator.Get<IReflector>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
             //Act
-            //var ctors = reflector.GetPublicConstructors(model.GetType());
+            var ctors = reflector.GetConstructors(model.GetType());
             //Assert
-           // Assert.Greater(Enumerable.Count<ConstructorInfo>(ctors) , 0);
+            Assert.Greater(ctors.Count() , 0);
         }
     }
 }

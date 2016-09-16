@@ -6,7 +6,7 @@ namespace ICD.OReflector.Tests.Models.Implementation
     {
         public Model()
         {
-            
+            var test = false;
         }
     }
 }

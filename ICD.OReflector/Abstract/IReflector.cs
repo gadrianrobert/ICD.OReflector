@@ -8,6 +8,6 @@ namespace ICD.OReflector.Abstract
 {
     public interface IReflector
     {
-        IEnumerable<ConstructorInfo> GetPublicConstructors(Type type);
+        IEnumerable<ConstructorInfo> GetConstructors(Type type);
     }
 }

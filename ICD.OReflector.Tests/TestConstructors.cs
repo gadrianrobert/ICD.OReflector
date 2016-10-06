@@ -1,12 +1,10 @@
 ﻿using System.Linq;
-using System.Reflection;
 using ICD.OReflector.Abstract;
 using ICD.OReflector.Tests.Models.Abstract;
 using NUnit.Framework;
 
 namespace ICD.OReflector.Tests
 {
-
     [TestFixture]
     public class TestConstructors
     {
@@ -21,5 +19,20 @@ namespace ICD.OReflector.Tests
             //Assert
             Assert.Greater(ctors.Count() , 0);
         }
+
+        [Test]
+        public void TestGetCustomAttributes()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var customAttributes = reflector.GetCustomAttributes(model.GetType());
+            //Assert
+            Assert.Greater(customAttributes.Count(), 0);
+        }
+
+
+       // RuntimeReflectionExtensions
     }
 }

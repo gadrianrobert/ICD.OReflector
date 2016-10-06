@@ -10,8 +10,19 @@ namespace ICD.OReflector.Implementation
     {
         public virtual IEnumerable<ConstructorInfo> GetConstructors(Type type)
         {
-            return type == null ? Enumerable.Empty<ConstructorInfo>()
-                                : type.GetTypeInfo().GetConstructors() ?? Enumerable.Empty<ConstructorInfo>();
+            return type?.GetTypeInfo().GetConstructors() ?? Enumerable.Empty<ConstructorInfo>();
         }
+
+        public virtual IEnumerable<object> GetCustomAttributes(Type type, bool inherit = false)
+        {
+            return type?.GetTypeInfo().GetCustomAttributes(inherit) ?? Enumerable.Empty<object>();
+        }
+
+        //return (IEnumerable<PropertyInfo>) type.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+
+        //return (IEnumerable<EventInfo>) type.GetEvents(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+        //return (IEnumerable<MethodInfo>) type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+        //return (IEnumerable<FieldInfo>) type.GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+    
     }
 }

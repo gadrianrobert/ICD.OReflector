@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace ICD.OReflector.Abstract
 {
     public interface IReflector
     {
         IEnumerable<ConstructorInfo> GetConstructors(Type type);
+
+        IEnumerable<object> GetCustomAttributes(Type type, bool inherit = false);
     }
 }

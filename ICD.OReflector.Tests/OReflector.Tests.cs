@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace ICD.OReflector.Tests
 {
     [TestFixture]
-    public class TestConstructors
+    public class OReflectorTests
     {
         [Test]
         public void TestGetConstructors()

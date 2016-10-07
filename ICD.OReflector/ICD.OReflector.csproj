@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IReflector.cs" />
     <Compile Include="Implementation\BaseReflector.cs" />
+    <Compile Include="Implementation\IntPtrPair.cs" />
     <Compile Include="Implementation\Reflector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

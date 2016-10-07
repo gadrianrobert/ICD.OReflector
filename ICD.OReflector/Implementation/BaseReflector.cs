@@ -15,9 +15,9 @@ namespace ICD.OReflector.Implementation
             return type?.GetConstructors() ?? Enumerable.Empty<ConstructorInfo>();
         }
 
-        public virtual IEnumerable<object> GetCustomAttributes(Type type, bool inherit = false)
+        public virtual IEnumerable<Attribute> GetCustomAttributes(Type type, bool inherit = false)
         {
-            return type?.GetCustomAttributes(inherit) ?? Enumerable.Empty<object>();
+            return type?.GetCustomAttributes(inherit).ToList().ConvertAll(item => item as Attribute) ?? Enumerable.Empty<Attribute>();
         }
 
         public virtual IEnumerable<PropertyInfo> GetProperties(Type type)
@@ -39,5 +39,11 @@ namespace ICD.OReflector.Implementation
         {
             return type?.GetFields(allBindingFlags) ?? Enumerable.Empty<FieldInfo>();
         }
+
+        public virtual IEnumerable<Attribute> GetCustomAttributes(MemberInfo member)
+        {
+            return member?.GetCustomAttributes(true).ToList().ConvertAll(item => item as Attribute) ?? Enumerable.Empty<Attribute>();
+        }
+
     }
 }

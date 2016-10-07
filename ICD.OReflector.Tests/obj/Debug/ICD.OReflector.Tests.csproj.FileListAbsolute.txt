@@ -17,3 +17,23 @@ D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.ORe
 D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.pdb
 D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.pdb
 D:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.csprojResolveAssemblyReference.cache
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.csprojResolveAssemblyReference.cache
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.pdb
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.Tests.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.Tests.pdb
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Castle.Core.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Moq.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.Extensions.Conventions.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\nunit.framework.dll
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.pdb
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Castle.Core.xml
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Moq.pdb
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Moq.xml
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.xml
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.Extensions.Conventions.xml
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\nunit.framework.xml
+D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

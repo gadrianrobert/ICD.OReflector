@@ -8,7 +8,7 @@ namespace ICD.OReflector.Abstract
     {
         IEnumerable<ConstructorInfo> GetConstructors(Type type);
 
-        IEnumerable<object> GetCustomAttributes(Type type, bool inherit = false);
+        IEnumerable<Attribute> GetCustomAttributes(Type type, bool inherit = false);
 
         IEnumerable<PropertyInfo> GetProperties(Type type);
 
@@ -17,5 +17,7 @@ namespace ICD.OReflector.Abstract
         IEnumerable<MethodInfo> GetMethods(Type type);
 
         IEnumerable<FieldInfo> GetFields(Type type);
+
+        IEnumerable<Attribute> GetCustomAttributes(MemberInfo member);
     }
 }

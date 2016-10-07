@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Reflection;
 using ICD.OReflector.Abstract;
 using ICD.OReflector.Tests.Models.Abstract;
 using NUnit.Framework;
@@ -32,7 +33,55 @@ namespace ICD.OReflector.Tests
             Assert.Greater(customAttributes.Count(), 0);
         }
 
+        [Test]
+        public void TestGetProperties()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var properties = reflector.GetProperties(model.GetType());
+            //Assert
+            Assert.Greater(properties.Count(), 0);
+        }
 
-       // RuntimeReflectionExtensions
+        [Test]
+        public void TestGetEvents()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var events = reflector.GetEvents(model.GetType());
+            //Assert
+            Assert.Greater(events.Count(), 0);
+        }
+
+        [Test]
+        public void TestGetMethods()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var methods = reflector.GetMethods(model.GetType());
+            //Assert
+            Assert.Greater(methods.Count(), 0);
+        }
+
+        [Test]
+        public void TestGetFields()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var fields = reflector.GetFields(model.GetType());
+            //Assert
+            Assert.Greater(fields.Count(), 0);
+        }
+
+
+        //RuntimeReflectionExtensions
     }
 }

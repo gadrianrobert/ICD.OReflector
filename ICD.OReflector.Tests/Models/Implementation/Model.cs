@@ -10,5 +10,7 @@ namespace ICD.OReflector.Tests.Models.Implementation
         {
             var test = false;
         }
+
+        public int Id { get; set; }
     }
 }

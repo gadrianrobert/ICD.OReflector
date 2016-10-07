@@ -8,21 +8,36 @@ namespace ICD.OReflector.Implementation
 {
     public class BaseReflector : IReflector
     {
+        private static BindingFlags allBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
+
         public virtual IEnumerable<ConstructorInfo> GetConstructors(Type type)
         {
-            return type?.GetTypeInfo().GetConstructors() ?? Enumerable.Empty<ConstructorInfo>();
+            return type?.GetConstructors() ?? Enumerable.Empty<ConstructorInfo>();
         }
 
         public virtual IEnumerable<object> GetCustomAttributes(Type type, bool inherit = false)
         {
-            return type?.GetTypeInfo().GetCustomAttributes(inherit) ?? Enumerable.Empty<object>();
+            return type?.GetCustomAttributes(inherit) ?? Enumerable.Empty<object>();
         }
 
-        //return (IEnumerable<PropertyInfo>) type.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+        public virtual IEnumerable<PropertyInfo> GetProperties(Type type)
+        {
+            return type?.GetProperties(allBindingFlags) ?? Enumerable.Empty<PropertyInfo>();
+        }
 
-        //return (IEnumerable<EventInfo>) type.GetEvents(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-        //return (IEnumerable<MethodInfo>) type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-        //return (IEnumerable<FieldInfo>) type.GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-    
+        public virtual IEnumerable<EventInfo> GetEvents(Type type)
+        {
+            return type?.GetEvents(allBindingFlags) ?? Enumerable.Empty<EventInfo>();
+        }
+
+        public virtual IEnumerable<MethodInfo> GetMethods(Type type)
+        {
+            return type?.GetMethods(allBindingFlags) ?? Enumerable.Empty<MethodInfo>();
+        }
+
+        public virtual IEnumerable<FieldInfo> GetFields(Type type)
+        {
+            return type?.GetFields(allBindingFlags) ?? Enumerable.Empty<FieldInfo>();
+        }
     }
 }

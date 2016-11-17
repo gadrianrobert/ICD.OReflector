@@ -37,7 +37,7 @@ namespace ICD.OReflector.Implementation
 		public override T GetCustomAttribute<T>(Type type, bool inherit = false)
 		{
 			var customAttributes = GetCustomAttributes(type, inherit);
-			return customAttributes != null ? (T)customAttributes.FirstOrDefault(item => customAttributes.First() is T) : default(T);
+			return customAttributes != null ? customAttributes.FirstOrDefault(item => customAttributes.First() is T) as T: default(T);
 		}
 
 		public override IEnumerable<PropertyInfo> GetProperties(Type type)

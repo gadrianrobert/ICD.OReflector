@@ -20,10 +20,10 @@ namespace ICD.OReflector.Implementation
             return type?.GetCustomAttributes(inherit).ToList().ConvertAll(item => item as Attribute) ?? Enumerable.Empty<Attribute>();
         }
 
-		public virtual T GetCustomAttribute<T>(Type type, bool inherit = false)
+	    public virtual T GetCustomAttribute<T>(Type type, bool inherit = false) where T : class
 		{
 			var customAttributes = GetCustomAttributes(type, inherit);
-			return customAttributes != null ? (T)customAttributes.FirstOrDefault(item => customAttributes.First() is T) : default(T);
+			return customAttributes != null ? customAttributes.FirstOrDefault(item => customAttributes.First() is T) as T: default(T);
 		}
 
 		public virtual IEnumerable<PropertyInfo> GetProperties(Type type)

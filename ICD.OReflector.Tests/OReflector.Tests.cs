@@ -93,6 +93,18 @@ namespace ICD.OReflector.Tests
             Assert.Greater(fields.Count(), 0);
         }
 
+        [Test]
+        public void TestGetMemberCustomAttributes()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            var idMember = reflector.GetProperties(model.GetType()).ToList().FirstOrDefault(item => item.Name == "Id");
+            //Act
+            var customAttributes = reflector.GetCustomAttributes(idMember);
+            //Assert
+            Assert.Greater(customAttributes.Count(), 0);
+        }
 
         //RuntimeReflectionExtensions
     }

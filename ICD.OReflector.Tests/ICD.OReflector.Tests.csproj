@@ -85,7 +85,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Attributes\" />
     <Folder Include="CoreLibraries\" />
   </ItemGroup>
   <ItemGroup>

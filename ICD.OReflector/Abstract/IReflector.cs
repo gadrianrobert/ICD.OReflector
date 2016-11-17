@@ -10,7 +10,9 @@ namespace ICD.OReflector.Abstract
 
         IEnumerable<object> GetCustomAttributes(Type type, bool inherit = false);
 
-        IEnumerable<PropertyInfo> GetProperties(Type type);
+		T GetCustomAttribute<T>(Type type, bool inherit = false);
+
+		IEnumerable<PropertyInfo> GetProperties(Type type);
 
         IEnumerable<EventInfo> GetEvents(Type type);
 

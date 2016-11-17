@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using System.Reflection;
 using ICD.OReflector.Abstract;
 using ICD.OReflector.Tests.Models.Abstract;
 using NUnit.Framework;
+using ICD.OReflector.Tests.Models.Attributes;
 
 namespace ICD.OReflector.Tests
 {
@@ -33,7 +33,19 @@ namespace ICD.OReflector.Tests
             Assert.Greater(customAttributes.Count(), 0);
         }
 
-        [Test]
+		[Test]
+		public void TestGetCustomAttribute()
+		{
+			//Arange
+			var model = NinjectConfigurator.Get<IModel>();
+			var reflector = NinjectConfigurator.Get<IReflector>();
+			//Act
+			var customAttribute = reflector.GetCustomAttribute<CustomAttribute>(model.GetType());
+			//Assert
+			Assert.IsTrue(typeof(CustomAttribute) == customAttribute.GetType());
+		}
+
+		[Test]
         public void TestGetProperties()
         {
             //Arange

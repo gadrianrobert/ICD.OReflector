@@ -1,6 +1,8 @@
-ICD.OReflector.Tests/bin/Debug/ICD.OReflector.dll
-ICD.OReflector.Tests/bin/Debug/ICD.OReflector.dll
-ICD.OReflector.Tests/bin/Debug/ICD.OReflector.Tests.pdb
-ICD.OReflector.Tests/obj/Debug/ICD.OReflector.Tests.pdb
-ICD.OReflector/Implementation/Reflector.cs
-ICD.OReflector/obj/Debug/ICD.OReflector.pdb
+ICD.OReflector/bin/Debug/
+ICD.OReflector/bin/Release/
+ICD.OReflector/obj/Debug/
+ICD.OReflector/obj/Release/
+ICD.OReflector.Tests/bin/Debug/
+ICD.OReflector.Tests/bin/Release/
+ICD.OReflector.Tests/obj/Debug/
+ICD.OReflector.Tests/obj/Release/

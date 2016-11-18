@@ -34,10 +34,11 @@ namespace ICD.OReflector.Implementation
 						})).GetOrAdd(type, default(IEnumerable<Attribute>));
 		}
 
-		public override T GetCustomAttribute<T>(Type type, bool inherit = false)
+		public override IEnumerable<T> GetCustomAttributes<T>(Type type, bool inherit = false)
 		{
 			var customAttributes = GetCustomAttributes(type, inherit);
-			return customAttributes != null ? customAttributes.FirstOrDefault(item => customAttributes.First() is T) as T: default(T);
+
+			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item => item as T) ?? Enumerable.Empty<T>();
 		}
 
 		public override IEnumerable<PropertyInfo> GetProperties(Type type)
@@ -64,5 +65,12 @@ namespace ICD.OReflector.Implementation
         {
             return member == null ? base.GetCustomAttributes((MemberInfo)null) : _memberCustomAttributesDictionary.GetOrAdd(new IntPointerPair() {first = member.DeclaringType.TypeHandle.Value, second = member.GetType().TypeHandle.Value}, base.GetCustomAttributes(member));
         }
-    }
+
+		public override IEnumerable<T> GetCustomAttributes<T>(MemberInfo member)
+		{
+			var customAttributes = GetCustomAttributes(member);
+
+			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item => item as T) ?? Enumerable.Empty<T>();
+		}
+	}
 }

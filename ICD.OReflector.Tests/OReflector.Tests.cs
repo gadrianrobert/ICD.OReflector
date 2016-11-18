@@ -34,15 +34,15 @@ namespace ICD.OReflector.Tests
         }
 
 		[Test]
-		public void TestGetCustomAttribute()
+		public void TestGetGenericCustomAttributes()
 		{
 			//Arange
 			var model = NinjectConfigurator.Get<IModel>();
 			var reflector = NinjectConfigurator.Get<IReflector>();
 			//Act
-			var customAttribute = reflector.GetCustomAttribute<CustomAttribute>(model.GetType());
+			var customAttributes = reflector.GetCustomAttributes<CustomAttribute>(model.GetType());
 			//Assert
-			Assert.IsTrue(typeof(CustomAttribute) == customAttribute.GetType());
+			Assert.Greater(customAttributes.Count(),0);
 		}
 
 		[Test]
@@ -106,6 +106,19 @@ namespace ICD.OReflector.Tests
             Assert.Greater(customAttributes.Count(), 0);
         }
 
-        //RuntimeReflectionExtensions
-    }
+		[Test]
+		public void TestGetGenericMemberCustomAttributes()
+		{
+			//Arange
+			var model = NinjectConfigurator.Get<IModel>();
+			var reflector = NinjectConfigurator.Get<IReflector>();
+			var idMember = reflector.GetProperties(model.GetType()).ToList().FirstOrDefault(item => item.Name == "Id");
+			//Act
+			var customAttributes = reflector.GetCustomAttributes<CustomAttribute>(idMember);
+			//Assert
+			Assert.Greater(customAttributes.Count(), 0);
+		}
+
+		//RuntimeReflectionExtensions
+	}
 }

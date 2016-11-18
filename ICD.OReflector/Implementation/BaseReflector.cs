@@ -20,10 +20,11 @@ namespace ICD.OReflector.Implementation
             return type?.GetCustomAttributes(inherit).ToList().ConvertAll(item => item as Attribute) ?? Enumerable.Empty<Attribute>();
         }
 
-	    public virtual T GetCustomAttribute<T>(Type type, bool inherit = false) where T : class
+	    public virtual IEnumerable<T> GetCustomAttributes<T>(Type type, bool inherit = false) where T : class
 		{
 			var customAttributes = GetCustomAttributes(type, inherit);
-			return customAttributes != null ? customAttributes.FirstOrDefault(item => customAttributes.First() is T) as T: default(T);
+
+			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item=>item as T) ?? Enumerable.Empty<T>();
 		}
 
 		public virtual IEnumerable<PropertyInfo> GetProperties(Type type)
@@ -51,5 +52,12 @@ namespace ICD.OReflector.Implementation
             return member?.GetCustomAttributes(true).ToList().ConvertAll(item => item as Attribute) ?? Enumerable.Empty<Attribute>();
         }
 
-    }
+	    public virtual IEnumerable<T> GetCustomAttributes<T>(MemberInfo member) where T : class
+		{
+			var customAttributes = GetCustomAttributes(member);
+
+			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item => item as T) ?? Enumerable.Empty<T>();
+		}
+
+	}
 }

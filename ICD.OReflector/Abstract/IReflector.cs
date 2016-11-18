@@ -10,7 +10,7 @@ namespace ICD.OReflector.Abstract
 
         IEnumerable<Attribute> GetCustomAttributes(Type type, bool inherit = false);
 
-		T GetCustomAttribute<T>(Type type, bool inherit = false) where T : class;
+		IEnumerable<T> GetCustomAttributes<T>(Type type, bool inherit = false) where T : class;
 
 		IEnumerable<PropertyInfo> GetProperties(Type type);
 
@@ -21,5 +21,7 @@ namespace ICD.OReflector.Abstract
         IEnumerable<FieldInfo> GetFields(Type type);
 
         IEnumerable<Attribute> GetCustomAttributes(MemberInfo member);
-    }
+
+		IEnumerable<T> GetCustomAttributes<T>(MemberInfo member) where T : class;
+	}
 }

@@ -3,6 +3,7 @@ using ICD.OReflector.Abstract;
 using ICD.OReflector.Tests.Models.Abstract;
 using NUnit.Framework;
 using ICD.OReflector.Tests.Models.Attributes;
+using ICD.OReflector.Tests.Models.Implementation;
 
 namespace ICD.OReflector.Tests
 {
@@ -18,7 +19,7 @@ namespace ICD.OReflector.Tests
             //Act
             var ctors = reflector.GetConstructors(model.GetType());
             //Assert
-            Assert.Greater(ctors.Count() , 0);
+            Assert.Greater(ctors.Count(), 0);
         }
 
         [Test]
@@ -33,19 +34,19 @@ namespace ICD.OReflector.Tests
             Assert.Greater(customAttributes.Count(), 0);
         }
 
-		[Test]
-		public void TestGetGenericCustomAttributes()
-		{
-			//Arange
-			var model = NinjectConfigurator.Get<IModel>();
-			var reflector = NinjectConfigurator.Get<IReflector>();
-			//Act
-			var customAttributes = reflector.GetCustomAttributes<CustomAttribute>(model.GetType());
-			//Assert
-			Assert.Greater(customAttributes.Count(),0);
-		}
+        [Test]
+        public void TestGetGenericCustomAttributes()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var customAttributes = reflector.GetCustomAttributes<CustomAttribute>(model.GetType());
+            //Assert
+            Assert.Greater(customAttributes.Count(), 0);
+        }
 
-		[Test]
+        [Test]
         public void TestGetProperties()
         {
             //Arange
@@ -106,19 +107,39 @@ namespace ICD.OReflector.Tests
             Assert.Greater(customAttributes.Count(), 0);
         }
 
-		[Test]
-		public void TestGetGenericMemberCustomAttributes()
-		{
-			//Arange
-			var model = NinjectConfigurator.Get<IModel>();
-			var reflector = NinjectConfigurator.Get<IReflector>();
-			var idMember = reflector.GetProperties(model.GetType()).ToList().FirstOrDefault(item => item.Name == "Id");
-			//Act
-			var customAttributes = reflector.GetCustomAttributes<CustomAttribute>(idMember);
-			//Assert
-			Assert.Greater(customAttributes.Count(), 0);
-		}
+        [Test]
+        public void TestGetGenericMemberCustomAttributes()
+        {
+            //Arange
+            var model = NinjectConfigurator.Get<IModel>();
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            var idMember = reflector.GetProperties(model.GetType()).ToList().FirstOrDefault(item => item.Name == "Id");
+            //Act
+            var customAttributes = reflector.GetCustomAttributes<CustomAttribute>(idMember);
+            //Assert
+            Assert.Greater(customAttributes.Count(), 0);
+        }
 
-		//RuntimeReflectionExtensions
-	}
+        [Test]
+        public void TestGenericInstantiate()
+        {
+            //Arange
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var model = reflector.Instantiate<Model>();
+            //Assert
+            Assert.IsNotNull(model);
+        }
+
+        [Test]
+        public void TestGenericInstantiateWithParameters()
+        {
+            //Arange
+            var reflector = NinjectConfigurator.Get<IReflector>();
+            //Act
+            var model = reflector.Instantiate<Model>(100);
+            //Assert
+            Assert.IsNotNull(model);
+        }
+    }
 }

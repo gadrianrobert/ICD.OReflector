@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using ICD.OReflector.Abstract;
+using Binder = Microsoft.CSharp.RuntimeBinder.Binder;
 
 namespace ICD.OReflector.Implementation
 {
@@ -59,5 +60,15 @@ namespace ICD.OReflector.Implementation
 			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item => item as T) ?? Enumerable.Empty<T>();
 		}
 
-	}
+        public virtual T Instantiate<T>() where T : class
+        {
+            return Activator.CreateInstance<T>();
+        }
+
+        public virtual T Instantiate<T>(params object[] parameters) where T : class
+        {
+            return Activator.CreateInstance(typeof(T), parameters) as T;
+        }
+        
+    }
 }

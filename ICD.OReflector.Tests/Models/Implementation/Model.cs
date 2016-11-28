@@ -9,10 +9,15 @@ namespace ICD.OReflector.Tests.Models.Implementation
 	{
 		public Model()
 		{
-			var test = false;
+		    Id = 1;
 		}
 
-		public event PropertyChangedEventHandler OnPropertyChanged;
+        public Model(int id)
+        {
+            Id = id;
+        }
+        
+        public event PropertyChangedEventHandler OnPropertyChanged;
 
 		[Custom]
 		public override int Id { get; set; }

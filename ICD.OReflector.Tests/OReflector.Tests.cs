@@ -120,7 +120,31 @@ namespace ICD.OReflector.Tests
             Assert.Greater(customAttributes.Count(), 0);
         }
 
-        [Test]
+		[Test]
+		public void TestGetTypeMemberCustomAttributes()
+		{
+			//Arange
+			var model = NinjectConfigurator.Get<IModel>();
+			var reflector = NinjectConfigurator.Get<IReflector>();
+			//Act
+			var customAttributes = reflector.GetTypePropertyCustomAttributes(model.GetType());
+			//Assert
+			Assert.Greater(customAttributes.Count(), 0);
+		}
+
+		[Test]
+		public void TestGetTypeGenericMemberCustomAttributes()
+		{
+			//Arange
+			var model = NinjectConfigurator.Get<IModel>();
+			var reflector = NinjectConfigurator.Get<IReflector>();
+			//Act
+			var customAttributes = reflector.GetTypePropertyCustomAttributes<CustomAttribute>(model.GetType());
+			//Assert
+			Assert.Greater(customAttributes.Count(), 0);
+		}
+
+		[Test]
         public void TestGenericInstantiate()
         {
             //Arange

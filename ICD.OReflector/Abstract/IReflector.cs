@@ -24,7 +24,11 @@ namespace ICD.OReflector.Abstract
 
 		IEnumerable<T> GetCustomAttributes<T>(MemberInfo member) where T : class;
 
-        T Instantiate<T>() where T : class;
+		IEnumerable<Attribute> GetTypePropertyCustomAttributes(Type type);
+
+		IEnumerable<T> GetTypePropertyCustomAttributes<T>(Type type) where T : class;
+
+		T Instantiate<T>() where T : class;
 
         T Instantiate<T>(params object[] parameters) where T : class;
     }

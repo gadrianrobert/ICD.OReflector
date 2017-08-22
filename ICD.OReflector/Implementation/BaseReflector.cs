@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using ICD.OReflector.Abstract;
-using Binder = Microsoft.CSharp.RuntimeBinder.Binder;
 
 namespace ICD.OReflector.Implementation
 {
-    public class BaseReflector : IReflector
+    public abstract class BaseReflector : IReflector
     {
         private static BindingFlags allBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
 
@@ -60,7 +59,11 @@ namespace ICD.OReflector.Implementation
 			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item => item as T) ?? Enumerable.Empty<T>();
 		}
 
-        public virtual T Instantiate<T>() where T : class
+		public abstract IEnumerable<Attribute> GetTypePropertyCustomAttributes(Type type);
+
+		public abstract IEnumerable<T> GetTypePropertyCustomAttributes<T>(Type type) where T : class;
+
+		public virtual T Instantiate<T>() where T : class
         {
             return Activator.CreateInstance<T>();
         }

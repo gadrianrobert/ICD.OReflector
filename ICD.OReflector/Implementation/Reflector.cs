@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization;
 
 namespace ICD.OReflector.Implementation
 {
@@ -17,8 +15,9 @@ namespace ICD.OReflector.Implementation
         private ConcurrentDictionary<Type, IEnumerable<MethodInfo>> _typeMethodsDictionary = new ConcurrentDictionary<Type, IEnumerable<MethodInfo>>();
         private ConcurrentDictionary<Type, IEnumerable<FieldInfo>> _typeFieldsDictionary = new ConcurrentDictionary<Type, IEnumerable<FieldInfo>>();
         private ConcurrentDictionary<IntPointerPair, IEnumerable<Attribute>> _memberCustomAttributesDictionary = new ConcurrentDictionary<IntPointerPair, IEnumerable<Attribute>>();
-		
-        public override IEnumerable<ConstructorInfo> GetConstructors(Type type)
+		private ConcurrentDictionary<Type, IEnumerable<Attribute>> _classPropertyCustomAttributesDictionary = new ConcurrentDictionary<Type, IEnumerable<Attribute>>();
+
+		public override IEnumerable<ConstructorInfo> GetConstructors(Type type)
         {
             return type == null ? base.GetConstructors(null) : _constructorsDictionary.GetOrAdd(type, base.GetConstructors(type));
         }
@@ -69,6 +68,29 @@ namespace ICD.OReflector.Implementation
 		public override IEnumerable<T> GetCustomAttributes<T>(MemberInfo member)
 		{
 			var customAttributes = GetCustomAttributes(member);
+
+			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item => item as T) ?? Enumerable.Empty<T>();
+		}
+
+	    public override IEnumerable<Attribute> GetTypePropertyCustomAttributes(Type type)
+	    {
+		    if (type == null) return Enumerable.Empty<Attribute>();
+
+			return _classPropertyCustomAttributesDictionary.GetOrAdd(type, tp =>
+			{
+				var properties = GetProperties(tp);
+				var attributes = new List<Attribute>();
+				foreach (var property in properties)
+				{
+					attributes.AddRange(GetCustomAttributes(property));
+				}
+				return attributes;
+			});
+		}
+
+		public override IEnumerable<T> GetTypePropertyCustomAttributes<T>(Type type)
+	    {
+			var customAttributes = GetTypePropertyCustomAttributes(type);
 
 			return customAttributes?.Where(item => item is T).ToList().ConvertAll(item => item as T) ?? Enumerable.Empty<T>();
 		}

@@ -21,6 +21,9 @@ namespace ICD.OReflector.Tests.Models.Implementation
 
 		[Custom]
 		public override int Id { get; set; }
+
+		[Custom]
+		public override int No { get; set; }
 	}
 
 }

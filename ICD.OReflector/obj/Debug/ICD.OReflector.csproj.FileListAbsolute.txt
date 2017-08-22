@@ -8,3 +8,8 @@ D:\Development\ICD.OReflector\ICD.OReflector\bin\Debug\ICD.OReflector.pdb
 D:\Development\ICD.OReflector\ICD.OReflector\obj\Debug\ICD.OReflector.csprojResolveAssemblyReference.cache
 D:\Development\ICD.OReflector\ICD.OReflector\obj\Debug\ICD.OReflector.dll
 D:\Development\ICD.OReflector\ICD.OReflector\obj\Debug\ICD.OReflector.pdb
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector\bin\Debug\ICD.OReflector.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector\bin\Debug\ICD.OReflector.pdb
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector\obj\Debug\ICD.OReflector.csprojResolveAssemblyReference.cache
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector\obj\Debug\ICD.OReflector.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector\obj\Debug\ICD.OReflector.pdb

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<package> 
+  <metadata> 
+    <id>ICD.OReflector</id> 
+    <title>ICD.OReflector</title>
+    <version>1.0.0</version> 
+    <authors>Robert Gheorghitoiu</authors>
+    <description>ICD.OReflector makes it easy to cache reflected type info.</description> 
+    <language>en-US</language>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>https://github.com/gadrianrobert/ICD.OReflector</projectUrl>
+  </metadata>
+  <files>
+    <file src="bin\Release\ICD.OReflector.dll" target="lib\net46\" />
+    <file src="bin\Release\ICD.OReflector.pdb" target="lib\net46\" />
+  </files>
+</package>

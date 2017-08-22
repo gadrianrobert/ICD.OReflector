@@ -37,3 +37,22 @@ D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.xml
 D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.Extensions.Conventions.xml
 D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\nunit.framework.xml
 D:\Development\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.Tests.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.Tests.pdb
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Castle.Core.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Moq.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.Extensions.Conventions.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\nunit.framework.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\ICD.OReflector.pdb
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Castle.Core.xml
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Moq.pdb
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Moq.xml
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.xml
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\Ninject.Extensions.Conventions.xml
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\bin\Debug\nunit.framework.xml
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.csprojResolveAssemblyReference.cache
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.dll
+E:\Projects\Personal Tests\ICD.OReflector\ICD.OReflector.Tests\obj\Debug\ICD.OReflector.Tests.pdb
